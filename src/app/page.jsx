@@ -7,8 +7,8 @@ export default function Home() {
         <h1 className="text-center text-3xl font-bold mb-7 z-10">Welcome</h1>
         <h2 className="text-center text-xl mb-5 z-10">Sign-In</h2>
 
-        <input className="mb-5" radius="lg" size="md" type="email" label="email" color="default" isRequired/>
-        <input className="mb-7" size="md" type="password" radius="lg" label="password" color="default" isRequired/>
+        <input className="mb-5" type="email"/><br/>
+        <input className="mb-7" type="password" />
         <Link href="/forgotpass" className="underline cursor-pointer z-10">Forgot Password?</Link>
         
       </div>
