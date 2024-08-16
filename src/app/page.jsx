@@ -1,17 +1,49 @@
+import Divider from "@/assets/Divider";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="h-screen absolute w-screen bg-gradient-to-t from-white to-black top-0 left-0 z-[-5] flex justify-center items-center">
-      <div className="w-6/8">
-        <h1 className="text-center text-3xl font-bold mb-7 z-10">Welcome</h1>
-        <h2 className="text-center text-xl mb-5 z-10">Sign-In</h2>
+    // The Main Container
+    <main className="h-screen flex justify-center
+      bg-gradient-to-r from-blue-400 to-green-400"
+    >
 
-        <input className="mb-5" type="email"/><br/>
-        <input className="mb-7" type="password" />
-        <Link href="/forgotpass" className="underline cursor-pointer z-10">Forgot Password?</Link>
-        
+    {/* // The Background Image */}
+    <img className="absolute h-screen object-cover object-right z-[0]" src="https://images.pexels.com/photos/7130475/pexels-photo-7130475.jpeg"/>
+      <Divider output="absolute overflow-hidden bottom-0"/>
+
+    {/* // The Content Itself */}
+      <div className="flex flex-col justify-between items-center w-7/8 p-5 py-5 *:z-20">
+        <h1 className="text-xl mb-7">Welcome!</h1>
+        <div>
+          <h2 className="text-center text-2xl font-bold mb-5 ">Login</h2>
+          <form>
+            <input className="mb-4 input input-bordered bg-transparent w-full max-w-sm " 
+              type="email" 
+              placeholder="Email" 
+              required
+            />
+            <br/>
+            <input className="mb-7 input input-bordered bg-transparent w-full max-w-sm bg-white text-black " 
+              type="password"  
+              placeholder="Password"
+            />
+            <br/>
+          </form>
+
+          <Link href="/forgotpass" className="mb-10 underline ">Forgot Password?</Link>
+          <br/>
+            <div className="flex"> 
+              <input type="checkbox" className="checkbox "/>
+              <label>&nbsp; Remember Me</label>
+            </div>
+
+        </div>
+        {/* Empty mf */}
+        <div></div>
       </div>
+      
+      
     </main>
   );
 }
