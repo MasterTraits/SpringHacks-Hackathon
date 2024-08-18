@@ -10,4 +10,7 @@ export default function page() {
     </main>
   )
 }
-  
+
+// email
+// first Surname
+// password

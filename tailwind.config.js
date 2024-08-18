@@ -16,6 +16,7 @@ module.exports = {
     colors: {
       "background": "#151515",
       "navbar" : '#181818',
+      "card" : '#1E1E1E',
     }
   },
   darkMode: "class",
