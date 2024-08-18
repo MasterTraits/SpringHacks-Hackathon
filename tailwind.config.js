@@ -15,7 +15,7 @@ module.exports = {
     },
     colors: {
       "background": "#151515",
-      "navbar" : '181818',
+      "navbar" : '#181818',
     }
   },
   darkMode: "class",
