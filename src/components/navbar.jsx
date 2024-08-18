@@ -8,7 +8,7 @@ import Link from 'next/link';
 const Navbar = () => {
   return (
 
-    <div className='fixed bottom-0 w-full bg-navbar text-white'>
+    <div className='fixed bottom-0 w-full bg-navbar text-white z-10'>
       <div className='flex justify-around py-4 px-2'>
         <Link href="/dashboard" passHref>
           <div className='flex flex-col items-center cursor-pointer'>

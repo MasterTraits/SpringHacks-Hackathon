@@ -1,12 +1,13 @@
-import Navbar from '@/components/navbar'
-import React from 'react'
+import Navbar from '@/components/navbar';
+import VideoPlayer from '@/components/videoplayer';
 
 const ShortsPage = () => {
   return (
     <div>
-      <Navbar/>
-    </div>
-  )
-}
+      <Navbar />
+      <VideoPlayer />
+    </div>     
+  );
+};
 
-export default ShortsPage
+export default ShortsPage;
