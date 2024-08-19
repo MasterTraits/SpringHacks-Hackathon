@@ -1,12 +1,13 @@
 'use client'
+
 import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 import { useSwipeable } from 'react-swipeable';
 
 const videoUrls = [
-  'https://youtube.com/shorts/JoqjbkSTz9Y?si=4YqNzbqXNwF1FbBH',
-  'https://youtube.com/shorts/ZPSvfABcjr8?si=JYHQ-hrwQLUlG-5g',
-  'https://youtube.com/shorts/aYSDYRXLQFY?si=PvMenlnFRyEX8z7X'
+  // '/videos/SAMPLEVID1.mp4',
+  // '/videos/SAMPLEVID2.mp4',
+  // '/videos/SAMPLEVID3.mp4'
 ];
 
 const VideoPlayer = () => {
@@ -24,19 +25,29 @@ const VideoPlayer = () => {
     onSwipedUp: handleNextVideo,
     onSwipedDown: handlePrevVideo,
     preventDefaultTouchmoveEvent: true,
-    trackMouse: true
+    trackTouch: true,
+    delta: 10
   });
 
   return (
-    <div {...handlers} className="relative h-screen w-screen">
-      <div className="absolute top-12 left-0 h-[calc(100%-3rem)] w-full">
+
+
+    // CANT PAUSE JUST YET
+    <div className="relative h-screen w-screen flex items-start justify-center">
+      <div className="relative h-[calc(100%-3rem)] w-full">
         <ReactPlayer
           url={videoUrls[currentVideoIndex]}
           playing
           controls={true}
           width="100%"
           height="100%"
+          className="w-full h-full"
         />
+        <div
+          {...handlers}
+          className="absolute top-0 left-0 w-full h-full z-10"
+          style={{ backgroundColor: 'transparent', pointerEvents: 'auto' }}
+        ></div>
       </div>
     </div>
   );
