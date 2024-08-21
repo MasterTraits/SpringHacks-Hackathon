@@ -7,8 +7,6 @@ import { GoFlame } from 'react-icons/go';
 import { PiGraduationCap } from "react-icons/pi";
 import Link from 'next/link';
 
-
-
 const Navbar = ({ setNavBarHeight = () => {} }) => {
   const navbarRef = useRef(null);
 
@@ -24,30 +22,31 @@ const Navbar = ({ setNavBarHeight = () => {} }) => {
   return (
     <div ref={navbarRef} className='fixed bottom-0 w-full bg-navbar text-white z-10'>
       <div className='flex justify-around py-4 px-2'>
-        <Link href="/discover" passHref>
+        <Link href="/discover">
           <div className='flex flex-col items-center cursor-pointer'>
-            <BsBriefcase />
-            <span>Dashboard</span>
+            <PiGraduationCap className='h-6 w-6' />
+            <span className='text-xs'>Discover</span>
           </div>
         </Link>
-        <Link href="/profile" passHref>
+        <Link href="/shorts">
           <div className='flex flex-col items-center cursor-pointer'>
-            <FiUser />
-            <span>Profile</span>
+            <GoFlame className='h-6 w-6' />
+            <span className='text-xs'>Shorts</span>
           </div>
         </Link>
-        <Link href="/shorts" passHref>
+        <Link href="/mentor">
           <div className='flex flex-col items-center cursor-pointer'>
-            <GoFlame />
-            <span>Shorts</span>
+            <BsBriefcase className='h-6 w-6'/>
+            <span className='text-xs'>Mentor</span>
           </div>
         </Link>
-        <Link href="/education" passHref>
+        <Link href="/profile">
           <div className='flex flex-col items-center cursor-pointer'>
-            <PiGraduationCap />
-            <span>Education</span>
+            <FiUser className='h-6 w-6'/>
+            <span className='text-xs'>Profile</span>
           </div>
         </Link>
+
       </div>
     </div>
   );
