@@ -7,8 +7,7 @@ const ShortsPage = () => {
 
   return (
     <div>
-      <Navbar />
-      <VideoPlayer/>
+            <VideoPlayer/>
     </div>     
   );
 };

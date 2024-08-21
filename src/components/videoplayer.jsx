@@ -1,17 +1,29 @@
 'use client'
 
-import React, { useState } from 'react';
-import ReactPlayer from 'react-player';
+import React, { useState, useRef, useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
-
-const videoUrls = [
-  // '/videos/SAMPLEVID1.mp4',
-  // '/videos/SAMPLEVID2.mp4',
-  // '/videos/SAMPLEVID3.mp4'
-];
+import ReactPlayer from 'react-player';
+import VideoCntrls from './videobtns'; // Assuming you have this component
+import ShortsUserNames from './videousername';
+import Link from 'next/link';
+import Navbar from './navbar'; // Import the Navbar component
 
 const VideoPlayer = () => {
+  const videoUrls = [
+    '/videos/SAMPLEVID1.mp4',
+    '/videos/SAMPLEVID2.mp4',
+    '/videos/SAMPLEVID3.mp4'
+  ];
+
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [navbarHeight, setNavbarHeight] = useState(0);
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    if (navbarRef.current) {
+      setNavbarHeight(navbarRef.current.offsetHeight);
+    }
+  }, [navbarRef]);
 
   const handleNextVideo = () => {
     setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videoUrls.length);
@@ -30,25 +42,21 @@ const VideoPlayer = () => {
   });
 
   return (
-
-
-    // CANT PAUSE JUST YET
-    <div className="relative h-screen w-screen flex items-start justify-center">
-      <div className="relative h-[calc(100%-3rem)] w-full">
+    <div className="relative h-screen w-screen" {...handlers}>
+      <div className="relative w-full" style={{ height: `calc(100vh - ${navbarHeight}px)` }}>
         <ReactPlayer
           url={videoUrls[currentVideoIndex]}
           playing
           controls={true}
           width="100%"
-          height="100%"
-          className="w-full h-full"
+          height={{ height: `calc(100vh - ${navbarHeight}px)` }}
+          className='object-cover'
         />
-        <div
-          {...handlers}
-          className="absolute top-0 left-0 w-full h-full z-10"
-          style={{ backgroundColor: 'transparent', pointerEvents: 'auto' }}
-        ></div>
+        <div className="absolute top-0 left- w-full h-full flex items-center justify-center">
+          <VideoCntrls />
+        </div>
       </div>
+      <Navbar ref={navbarRef} />  
     </div>
   );
 };
