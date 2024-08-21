@@ -18,7 +18,10 @@ module.exports = {
       "navbar" : '#181818',
       "card" : '#1E1E1E',
       "link" : '#FFD700',
-    }
+      "white" : '#FFF',
+      "black" : '#000',
+    },
+    
   },
   darkMode: "class",
   plugins: [

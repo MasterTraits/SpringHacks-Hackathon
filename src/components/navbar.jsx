@@ -7,10 +7,9 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
-
     <div className='fixed bottom-0 w-full bg-navbar text-white z-10'>
       <div className='flex justify-around py-4 px-2'>
-        <Link href="/dashboard" passHref>
+        <Link href="/discover" passHref>
           <div className='flex flex-col items-center cursor-pointer'>
             <PiGraduationCap className="text-2xl" /> 
             <span className='text-sm font-extralight tracking-wider'>Learn</span>
