@@ -1,16 +1,29 @@
 'use client'
-import React, { useState } from 'react';
-import ReactPlayer from 'react-player';
-import { useSwipeable } from 'react-swipeable';
 
-const videoUrls = [
-  'https://youtube.com/shorts/JoqjbkSTz9Y?si=4YqNzbqXNwF1FbBH',
-  'https://youtube.com/shorts/ZPSvfABcjr8?si=JYHQ-hrwQLUlG-5g',
-  'https://youtube.com/shorts/aYSDYRXLQFY?si=PvMenlnFRyEX8z7X'
-];
+import React, { useState, useRef, useEffect } from 'react';
+import { useSwipeable } from 'react-swipeable';
+import ReactPlayer from 'react-player';
+import VideoCntrls from './videobtns'; // Assuming you have this component
+import ShortsUserNames from './videousername';
+import Link from 'next/link';
+import Navbar from './navbar'; // Import the Navbar component
 
 const VideoPlayer = () => {
+  const videoUrls = [
+    '/videos/SAMPLEVID1.mp4',
+    '/videos/SAMPLEVID2.mp4',
+    '/videos/SAMPLEVID3.mp4'
+  ];
+
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [navbarHeight, setNavbarHeight] = useState(0);
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    if (navbarRef.current) {
+      setNavbarHeight(navbarRef.current.offsetHeight);
+    }
+  }, [navbarRef]);
 
   const handleNextVideo = () => {
     setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videoUrls.length);
@@ -24,20 +37,26 @@ const VideoPlayer = () => {
     onSwipedUp: handleNextVideo,
     onSwipedDown: handlePrevVideo,
     preventDefaultTouchmoveEvent: true,
-    trackMouse: true
+    trackTouch: true,
+    delta: 10
   });
 
   return (
-    <div {...handlers} className="relative h-screen w-screen">
-      <div className="absolute top-12 left-0 h-[calc(100%-3rem)] w-full">
+    <div className="relative h-screen w-screen" {...handlers}>
+      <div className="relative w-full" style={{ height: `calc(100vh - ${navbarHeight}px)` }}>
         <ReactPlayer
           url={videoUrls[currentVideoIndex]}
           playing
           controls={true}
           width="100%"
-          height="100%"
+          height={{ height: `calc(100vh - ${navbarHeight}px)` }}
+          className='object-cover'
         />
+        <div className="absolute top-0 left- w-full h-full flex items-center justify-center">
+          <VideoCntrls />
+        </div>
       </div>
+      <Navbar ref={navbarRef} />  
     </div>
   );
 };

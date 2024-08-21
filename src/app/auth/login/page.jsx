@@ -55,7 +55,7 @@ export default function Home() {
           </form>
           
           <Link href="/auth/forgotpass" className="underline text-sm">Forgot Password?</Link>
-          <br/><br/>
+  x        <br/><br/>
           <div className="flex"> 
             <input type="checkbox" className="checkbox border-2 h-5 w-5" id="remember"/>
             <label className="text-sm" htmlFor="remember">&nbsp; Remember Me</label>
