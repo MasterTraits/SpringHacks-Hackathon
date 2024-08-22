@@ -20,6 +20,8 @@ module.exports = {
       "link" : '#FFD700',
       "white" : '#FFF',
       "black" : '#000',
+      "btnWhite" : '#D9D9D9',
+      "green" : '#54C541',
     },
     
   },
