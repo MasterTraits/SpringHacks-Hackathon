@@ -31,7 +31,7 @@ export default function CoursePref(
         </div>
 
         {/* FIX THIS STUFF BRO */}
-        <div className="absolute left-1 right-1 top-1/2 flex -translate-y-1/2 transform justify-between">
+        <div className="absolute left-1 right-1 top-1/2 flex -translate-y-1/3 transform justify-between">
           <a href="#slide4" className="btn btn-circle">❮</a>
           <a href="#slide2" className="btn btn-circle">❯</a>
         </div>
