@@ -9,10 +9,10 @@ import { PiGraduationCap } from "react-icons/pi";
 import { LuUser } from "react-icons/lu";
 import ProfileBtn from '@/components/profilebuttons';
 
-const ProfilePage = () => {
+  const ProfilePage = () => {
 
   const [showFullText, setShowFullText] = useState(false);
-
+// change this to actual code in db
   const text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
   const toggleText = () => {
