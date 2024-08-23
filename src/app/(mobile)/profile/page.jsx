@@ -7,7 +7,7 @@ import { GoSearch } from "react-icons/go";
 import { GoBell } from "react-icons/go";
 import { PiGraduationCap } from "react-icons/pi";
 import { LuUser } from "react-icons/lu";
-import ProfileBtn from '@/components/profilebuttons';
+import ProfileBtn from '@/components/profile/profilebuttons';
 import { useRouter } from 'next/navigation';
  
 

@@ -2,7 +2,7 @@
 import { GoSearch } from "react-icons/go";
 import React from 'react';
 // import { useRouter } from 'next/navigation';
-import MentorMessages from "@/components/mentorMessage";
+import MentorMessages from "@/components/mentor/mentorMessage";
 import Router from 'next/router'
 
 
