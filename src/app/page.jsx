@@ -16,9 +16,9 @@ export default function page() {
           Labore exercitation nostrud dolore minim id. Fugiat aute exercitation commodo. 
         </p>
       </div>
-      <div className="w-11/12 mb-7 *:rounded-full *:text-lg *:w-full z-10 text-center">
-        <Link href="/auth/login" className="btn mb-3 max-w-sm">Login</Link><br/>
-        <Link href="/auth/register" className="btn bg-card max-w-sm">Register</Link>
+      <div className="w-11/12 mb-7">
+        <Link href="/login" className="btn mb-3 max-w-sm rounded-full text-lg w-full z-10 text-center">Login</Link><br/>
+        <Link href="/register" className="btn bg-card max-w-sm rounded-full text-lg w-full z-10 text-center">Register</Link>
       </div>
     </main>
   )
