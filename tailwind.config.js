@@ -20,11 +20,14 @@ module.exports = {
       "link" : '#FFD700',
       "white" : '#FFF',
       "black" : '#000',
+      "btnWhite" : '#D9D9D9',
+      "green" : '#54C541',
+      'texttime' : '4C4C4C',
     },
     
   },
   darkMode: "class",
   plugins: [
-    require('daisyui'),
-  ],
-}
+      require('daisyui'),
+    ],
+  }
