@@ -2,7 +2,7 @@ import { BsStarFill } from "react-icons/bs"
 import Link from "next/link"
 
 export default function Course({name, organization, rating, type}) {
-  const nameSliced = name.slice(0, 22) + "..."
+  const nameSliced = name.slice(0, 30) + "..."
 
   // Add rating equation here
 
@@ -17,6 +17,6 @@ export default function Course({name, organization, rating, type}) {
           <BsStarFill/><p className="text-xs">&nbsp;{rating} - {type}</p>
         </div>
       </div>
-  </Link>
+    </Link>
   )
 }

@@ -1,13 +1,22 @@
+"use client";
+
+// COMPONENTS
 import ArticleHeader from "@/components/discover/ArticleHeader";
 import Course from "@/components/discover/Course";
 import CoursePref from "@/components/discover/CoursePref";
-
 import Link from "next/link";
-import clsx from "clsx";
 
+// UTILS
+import clsx from "clsx";
+import { useContext } from "react";
+import { UserContext } from "./layout";
+
+// ICONS
 import { BsBell, BsSearch } from "react-icons/bs";
 
 export default function page() {
+  const [searchContent, setSearchContent] = useContext(UserContext);
+
   return (
     <main className="h-[92vh] overflow-y-auto bg-background overflow-hidden">
       {/* INTRODUCTORY */}
@@ -37,17 +46,24 @@ export default function page() {
             Advance
             <br /> Your Career
           </h1>
-        </div>  
+        </div>
         {/* SEARCH BAR */}
         <form className="mb-3 flex justify-center gap-2 z-10">
           <input
             type="search"
             placeholder="Search here"
+            value={searchContent}
+            onChange={(e) => setSearchContent(e.target.value)}
             className="input text-sm bg-neutral-50 w-full text-black rounded-full z-10"
           />
-          <button type="submit" className="btn rounded-full z-10 bg-background outline-white">
+
+          <Link
+            href="/discover/catalog"
+            type="submit"
+            className="btn rounded-full z-10 bg-background outline-white"
+          >
             <BsSearch className="text-xl" />
-          </button>
+          </Link>
         </form>
       </section>
 
@@ -68,8 +84,13 @@ export default function page() {
       <article className="mb-7">
         <ArticleHeader text="My Courses" referral="" />
         <div className="overflow-hidden h-56">
-          <div className="flex h-52 overflow-y-auto whitespace-nowrap">
+          <div className="flex h-60 overflow-y-auto whitespace-nowrap">
             {/* { Fetch data here using .map() } */}
+            <Course
+              name="Mindshift: Break Through Obstacles to Learning and Discover Your Hidden Potential"
+              organization="Coursera"
+              type="With Certificate"
+            />
             <Course
               name="Mindshift: Break Through Obstacles to Learning and Discover Your Hidden Potential"
               organization="Coursera"
@@ -99,7 +120,7 @@ export default function page() {
       <article className="mb-7">
         <ArticleHeader text="My Courses" referral="" />
         <div className="overflow-hidden h-56">
-          <div className="flex h-52 overflow-y-auto whitespace-nowrap">
+          <div className="flex h-60 overflow-y-auto whitespace-nowrap">
             {/* { Fetch data here using .map() } */}
             <Course
               name="Mindshift: Break Through Obstacles to Learning and Discover Your Hidden Potential"
@@ -109,7 +130,6 @@ export default function page() {
           </div>
         </div>
       </article>
-
     </main>
   );
 }
