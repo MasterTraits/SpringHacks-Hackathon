@@ -9,7 +9,7 @@ import { BsBell, BsSearch } from "react-icons/bs";
 
 export default function page() {
   return (
-    <main className="h-full mb-16 bg-background overflow-hidden">
+    <main className="h-[92vh] overflow-y-auto bg-background overflow-hidden">
       {/* INTRODUCTORY */}
       <section className="relative mb-6 p-7 w-full">
         <img

@@ -1,4 +1,5 @@
 import { BsStarFill } from "react-icons/bs"
+import Link from "next/link"
 
 export default function Course({name, organization, rating, type}) {
   const nameSliced = name.slice(0, 22) + "..."
@@ -6,7 +7,7 @@ export default function Course({name, organization, rating, type}) {
   // Add rating equation here
 
   return (
-    <div className="ml-5 bg-card border-[1px] border-neutral-700 rounded-xl">
+    <Link href='' className="ml-5 bg-card border-[1px] border-neutral-700 rounded-xl">
       {/* ADD IMAGE MAP */}
       <img src="" className="mb-2 h-28 w-52 rounded-t-xl" /> 
       <div className="px-3 pt-2">
@@ -16,6 +17,6 @@ export default function Course({name, organization, rating, type}) {
           <BsStarFill/><p className="text-xs">&nbsp;{rating} - {type}</p>
         </div>
       </div>
-  </div>
+  </Link>
   )
 }

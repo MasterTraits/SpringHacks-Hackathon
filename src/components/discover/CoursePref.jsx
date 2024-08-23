@@ -55,7 +55,7 @@ export default function CoursePref(
           {description}
         </p>
         <div className="flex justify-between items-center">
-          <button className="btn btn-accent">See more</button>
+          <button className="btn btn-accent">Enroll me!</button>
           <BsThreeDotsVertical />
         </div>
       </div>
