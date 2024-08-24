@@ -7,6 +7,7 @@ module.exports = {
     ],
   theme: {
     extend: {
+      transform: ["hover", "focus"],
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
