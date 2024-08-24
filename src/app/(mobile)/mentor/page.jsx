@@ -1,28 +1,18 @@
 'use client'
 import { GoSearch } from "react-icons/go";
 import React from 'react';
-// import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import MentorMessages from "@/components/mentorMessage";
 import Router from 'next/router'
 
 
 const MentorPage = () => {
-  // const router = useRouter();
-
-  // const handleMentorClick = (mentorId) => {
-  //   router.push(`/mentor/${mentorId}`);
-  // };
+  const router = useRouter();
 
 
-  function mentorDetails () {
-    Router.push({
-      pathname: '/mentor/mentorId',
-      query: {
-        mentorname,
-        profile,
-      }
-    })
-  }
+  const handleMentorClick = (mentorId) => {
+    router.push(`/mentor/${mentorId}`);
+  };
 
   return (
     <main>
@@ -35,18 +25,15 @@ const MentorPage = () => {
       </nav>
 
       <section className="h-screen bg-background px-5 py-3">
-        {/* <div onClick={() => handleMentorClick('Michael Reeves')} > */}
-        <div>
+        <div onClick={() => handleMentorClick('Michael Reeves')} >
           <MentorMessages
             key='Michael Reeves'
             time='1:00pm'
             profile='IMAGES/USERPFP.JPG'
-            mentorName='Michael Reeves'
+            mentorname='Michael Reeves'
+            message='wawawa'
           />
         </div>
-
-        <button onClick={() => mentorDetails} className="btn">wawawa</button>
-
       </section>
     </main>
   );
