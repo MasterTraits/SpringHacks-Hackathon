@@ -29,5 +29,12 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }  
+}
+@layer components {
+  .profileXcourseNavButton {
+    @apply text-4xl bg-black p-1.5 rounded-3xl
   }
 }
+
+
