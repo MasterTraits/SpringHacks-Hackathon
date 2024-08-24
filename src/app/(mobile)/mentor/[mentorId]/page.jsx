@@ -1,27 +1,20 @@
 'use client'
 
-import { useRouter } from 'next/navigation';
-
+import { FaArrowLeft } from 'react-icons/fa'
+import { IoCallOutline, IoCameraOutline } from "react-icons/io5";
 
 const MentorChatPage = () => {
 
-const router = useRouter()  
-    const {
-      query: {mentorname, profile},
-  
-    } = router
-  
-    const props = {
-      profile,
-    }
-  
 
 // needs data base to fetch data placeholder muna wala muna to
   return (
     <main>
-      <nav className='flex items-center justify-between bg-card px-5 py-4'>
-        <img className='h-10 w-auto' src='/IMAGES/HireMentor.png' />
-        <h1 className="font-semibold text-lg">Chat with {props.mentorname}</h1>
+      <nav className='flex items-center justify-between bg-card px-5 py-4 drop-shadow-md'>
+        <FaArrowLeft className='text-lg'/>
+        {/* make name of the mentor here */}
+        <h1 className="font-light text-lg">Michael Reeves</h1>
+        <IoCallOutline className='bg-background p-2 text-5xl rounded-3xl '/>
+        <IoCameraOutline className=''/>
       </nav>
       {/* chatting here */}
       <section className="h-screen bg-background px-5 py-3">
@@ -31,7 +24,7 @@ const router = useRouter()
       <img
         alt="Tailwind CSS chat bubble component"
         src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-    </div>
+    </div>  
   </div>
   <div className="chat-bubble">It was said that you would, destroy the Sith, not join them.</div>
 </div>
