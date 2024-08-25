@@ -3,6 +3,7 @@
 import {useState, createContext} from 'react'
 
 export const UserContext = createContext()
+export const NavAdios = createContext
 
 export default function layout({children}) {
   const [searchContent, setSearchContent] = useState("")

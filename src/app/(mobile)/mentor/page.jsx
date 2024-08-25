@@ -1,14 +1,13 @@
 'use client'
 import { GoSearch } from "react-icons/go";
-import React from 'react';
+import { useEffect, useContext} from 'react';
 import { useRouter } from 'next/navigation';
-import MentorMessages from "@/components/mentorMessage";
+import MentorMessages from "@/components/mentor/mentorMessage";
 import Router from 'next/router'
-
+import { pathname } from 'next/router';
 
 const MentorPage = () => {
   const router = useRouter();
-
 
   const handleMentorClick = (mentorId) => {
     router.push(`/mentor/${mentorId}`);

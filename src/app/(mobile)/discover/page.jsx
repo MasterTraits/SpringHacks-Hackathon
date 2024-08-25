@@ -14,6 +14,12 @@ import { UserContext } from "./layout";
 // ICONS
 import { BsBell, BsSearch } from "react-icons/bs";
 
+// const fetchFromData = async () => {
+//   const res = await fetch("https://locahost:3000/api/route.js");
+//   const data = await res.json();
+//   return data;
+// }
+
 export default function page() {
   const [searchContent, setSearchContent] = useContext(UserContext);
 
@@ -47,6 +53,7 @@ export default function page() {
             <br /> Your Career
           </h1>
         </div>
+
         {/* SEARCH BAR */}
         <form className="mb-3 flex justify-center gap-2 z-10">
           <input

@@ -1,7 +1,9 @@
 import Divider from "@/assets/Divider"
 import Link from 'next/link'
 import Image from "next/image"
+// import { createContext } from "react"
 
+// export const Authenticated = createContext();
 
 export default function page() {
 

@@ -9,7 +9,7 @@ export default function ShortCourse({name, organization, rating, type}) {
   return (
     <Link href='' className="mb-5">
       {/* ADD IMAGE MAP */}
-      <img src="" className="mb-2 h-28 w-40 rounded-xl" /> 
+      <img src="" className="mb-2 h-28 w-32 rounded-xl border-white border-2" /> 
         <h3 className="font-semibold text-md text-wrap w-40 leading-5">{nameSliced}</h3>
         <p className="text-sm">{organization}</p>
         <div className="flex items-center w-full">

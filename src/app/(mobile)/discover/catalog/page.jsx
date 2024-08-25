@@ -79,7 +79,7 @@ export default function page() {
         </container>
       </section>
 
-      <article className="mt-8 grid grid-cols-2 px-4 justify-items-center">
+      <article className="mt-6 grid grid-cols-2 px-4 justify-center justify-items-center">
         <ShortCourse
           name="Example"
           organization="Example"

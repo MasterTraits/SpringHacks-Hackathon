@@ -6,6 +6,9 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
   theme: {
+    screens: {
+      'rg': '350px'
+    },
     extend: {
       transform: ["hover", "focus"],
       backgroundImage: {

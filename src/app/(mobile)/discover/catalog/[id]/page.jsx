@@ -5,9 +5,9 @@ import { PiArrowLeft } from "react-icons/pi";
 import { BsSearch, BsThreeDotsVertical, BsShare } from "react-icons/bs";
 import { useRouter } from "next/navigation";
 
-export default function page() {
-  const router = useRouter();
+const router = useRouter();
 
+export default function page() {
   return (
     <main className="h-[92vh] bg-background">
       <img src="" className="absolute z-[-1]" />

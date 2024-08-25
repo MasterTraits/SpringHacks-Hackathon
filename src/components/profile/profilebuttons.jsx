@@ -11,7 +11,7 @@ const ProfileBtn = ({ name }) => {
 
   return (
     <button 
-      className='bg-btnWhite text-md text-black font-extrabold rounded-3xl px-5 py-1 transform focus:bg-green'
+      className='text-nowrap bg-white text-md text-black font-extrabold rounded-3xl px-2 rg:px-5 py-1 transform focus:bg-green'
       onClick={handleClick}
     >
       {buttonText}
