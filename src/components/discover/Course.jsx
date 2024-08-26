@@ -7,7 +7,10 @@ export default function Course({name, organization, rating, type}) {
   // Add rating equation here
 
   return (
-    <Link href='' className="ml-5 bg-card border-[1px] border-neutral-700 rounded-xl">
+    <Link 
+      href='/discover/catalog/1' 
+      className="ml-5 bg-card border-[1px] border-neutral-700 rounded-xl"
+    >
       {/* ADD IMAGE MAP */}
       <img src="" className="mb-2 h-28 w-52 rounded-t-xl" /> 
       <div className="px-3 pt-2">

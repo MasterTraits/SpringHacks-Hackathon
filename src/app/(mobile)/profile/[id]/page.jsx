@@ -34,7 +34,7 @@ const ProfilePage = () => {
       <section className="max-h-full p-6 bg-gradient-to-b from-white to-background">
         <nav className="flex items-center justify-start gap-3 *:hover:cursor-pointer">
           <div className="grow">
-            <button type="button" onClick={() => router.back()}>
+            <button type="button" onClick={() => router.back().back()}>
               <FaArrowLeft className="text-3xl text-black" />
             </button>
           </div>
@@ -56,8 +56,8 @@ const ProfilePage = () => {
           </span>
           {/* BTNS IN PAGE */}
           <div className="mb-3 flex flex-wrap pt-2 items-center gap-2">
-            {authenticated && <ProfileBtn name="Apply to mentor" />}
-            <ProfileBtn name="Follow" />
+            {authenticated && <ProfileBtn name="Apply to mentor" styling="bg-none border-2 border-white text-white"/>}
+            <ProfileBtn name="Follow" styling="bg-white text-black"/>
             <BsThreeDotsVertical className="text-3xl p-1.5 text-black bg-white rounded-full "/>
           </div>
           {/* USER TAGS */}
@@ -115,10 +115,45 @@ const ProfilePage = () => {
         </div>
         <hr className="text-neutral-700"/>
         
+        { authenticated && (
+        <>
+        <div className="my-5 flex items-center justify-between animate-">
+          <h1 className="bg-btnWhite text-md text-center text-black font-bold rounded-3xl px-3 py-1">
+            Services Offered
+          </h1>
+        </div>
+        <section className="overflow-hidden h-12">
+          <container className="overflow--auto whitespace-nowrap h-16 mb-2 *:py-0 ">
+            <div className="flex gap-2 animate-move">
+              {/* MAP HERE */}
+              <button className="btn btn-outline outline-white outline-2 text-white hover:bg-white rounded-xl">
+                Information Technology
+              </button>
+              <button className="btn btn-outline outline-white outline-2 text-white hover:bg-white rounded-xl">
+                Data Structures and Algorithms
+              </button>
+              <button className="btn btn-outline outline-white outline-2 text-white hover:bg-white rounded-xl">
+                CISSP
+              </button>
+              <button className="btn btn-outline outline-white outline-2 text-white hover:bg-white rounded-xl">
+                DevOps
+              </button>
+              <button className="btn btn-outline outline-white outline-2 text-white hover:bg-white rounded-xl">
+                Python
+              </button>
+              <button className="btn btn-outline outline-white outline-2 text-white hover:bg-white rounded-xl">
+                Python
+              </button>
+            </div>
+          </container>
+        </section>
+        <hr className="my-7 text-neutral-700"/>
+        </>
+        )}
         
         <div className="mt-6 mb-2 flex items-center justify-between ">
-          <h1 className="border-btnWhite border-2 text-md text-center text-white font-bold rounded-3xl px-3 py-1">
-            Certifications
+          <h1 className="bg-white text-md text-center text-black font-bold rounded-3xl px-3 py-1">
+            Certifications {authenticated && "& Licenses"}
           </h1>
         </div>
         <div className="flex flex-col">
