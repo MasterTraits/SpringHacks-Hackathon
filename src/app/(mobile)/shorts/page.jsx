@@ -1,20 +1,20 @@
 'use client'
-import VideoCntrls from '@/components/videobtns';
+import VideoCntrls from '@/components/shorts/videobtns';
 import React, { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 
 
 const ShortsPage = () => {
 
-const videoUrls = [
-  './videos/SAMPLEVID1.mp4',
-  './videos/SAMPLEVID2.mp4',
-  './videos/SAMPLEVID3.mp4',
-]
+  const videoUrls = [
+    './videos/SAMPLEVID1.mp4',
+    './videos/SAMPLEVID2.mp4',
+    './videos/SAMPLEVID3.mp4',
+  ]
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [handlers, setHandlers] = useState({});
-  
+
   useEffect(() => {
     setHandlers({
       onSwipedUp: handleNextVideo,
@@ -24,15 +24,15 @@ const videoUrls = [
       delta: 10
     });
   }, []);
-  
+
   const handleNextVideo = () => {
     setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videoUrls.length);
   };
-  
+
   const handlePrevVideo = () => {
     setCurrentVideoIndex((prevIndex) => (prevIndex - 1 + videoUrls.length) % videoUrls.length);
   };
-  
+
   return (
     <main className="relative h-screen w-screen" {...handlers}>
       <div className="relative w-full">

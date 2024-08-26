@@ -2,9 +2,8 @@
 import { GoSearch } from "react-icons/go";
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import MentorMessages from "@/components/mentorMessage";
 import Router from 'next/router'
-
+import MentorMessages from '@/components/mentor/mentorMessage'
 
 const MentorPage = () => {
   const router = useRouter();
@@ -25,7 +24,7 @@ const MentorPage = () => {
       </nav>
 
       <section className="h-screen bg-background px-5 py-3">
-        <div onClick={() => handleMentorClick('Michael Reeves')} >
+        <div onClick={() => handleMentorClick('Michael Reeves')}>
           <MentorMessages
             key='Michael Reeves'
             time='1:00pm'

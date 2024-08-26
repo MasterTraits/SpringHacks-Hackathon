@@ -1,13 +1,19 @@
 'use client'
-const MentorMessages = (props) => {
 
+import React from 'react';
+
+const MentorMessages = (props) => {
   return (
     <div 
       className="flex items-center gap-4 hover:bg-card p-5" 
       onClick={props.onClick}
     >
       <span>
-        <img className='h-[4rem] bg-white rounded-full p-[3px]' src={props.profile} />
+        <img 
+          className='h-[4rem] bg-white rounded-full p-[3px]' 
+          src={props.profile} 
+          alt={`${props.mentorname}'s profile`} 
+        />
       </span>
       <span>
         <h1 className={`font-light text-lg ${props.isActive ? 'font-bold' : ''}`}>
